@@ -1,6 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     const drawBtn = document.getElementById('draw-btn');
     const ballsContainer = document.getElementById('balls-container');
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    // 테마 설정 불러오기
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+        themeToggleBtn.textContent = '🌙 다크 모드';
+    }
+
+    // 테마 변경 버튼 이벤트
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        if (document.body.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+            themeToggleBtn.textContent = '🌙 다크 모드';
+        } else {
+            localStorage.setItem('theme', 'dark');
+            themeToggleBtn.textContent = '☀️ 화이트 모드';
+        }
+    });
 
     drawBtn.addEventListener('click', drawNumbers);
 

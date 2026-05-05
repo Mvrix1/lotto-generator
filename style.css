@@ -14,6 +14,55 @@
     --color-41-45: #b0d840; /* 녹색 */
 }
 
+body.light-mode {
+    --bg-dark: #e2e8f0;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --text-main: #1e293b;
+    --text-muted: #475569;
+}
+
+.theme-toggle-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.theme-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text-main);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.theme-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+body.light-mode .theme-btn {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.1);
+}
+
+body.light-mode .theme-btn:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+body.light-mode .plus-sign {
+    color: rgba(0,0,0,0.6);
+    text-shadow: none;
+}
+
+body.light-mode .container {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
 * {
     margin: 0;
     padding: 0;
